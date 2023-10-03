@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function arrayToCountObject(arr) {
+        // Create an empty object to store the counts
+        const countObject = {};
+
+        // Loop through the array
+        for (let i = 0; i < arr.length; i++) {
+          const num = arr[i];
+
+          // If the key already exists in the object, increment the count
+          if (countObject.hasOwnProperty(num)) {
+            countObject[num]++;
+          } else {
+            // If the key doesn't exist, initialize it with a count of 1
+            countObject[num] = 1;
+          }
+        }
+
+        return countObject;
+      }
+
+      // Example usage:
+      const numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+      const countResult = arrayToCountObject(numbers);
+      console.log(countResult);
+      document.write(countResult);
+    </script>
+  </body>
+</html>
